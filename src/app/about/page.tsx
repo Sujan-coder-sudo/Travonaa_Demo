@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Image from 'next/image';
 
 const team = [
-  { name: 'Swaroop C Patil', role: 'Founder', avatar: 'SP', image: 'https://storage.googleapis.com/aifirebase/sc-759882f0-e761-4171-92b8-c313a5a70908.png', dataAiHint: 'man portrait' },
+  { name: 'Swaroop C Patil', role: 'Founder', avatar: 'SP', image: 'https://storage.googleapis.com/aifirebase/swaroop-255018a5-502a-452f-91a5-1c3a64d1f2a3.png', dataAiHint: 'man portrait' },
   { name: 'Sujan Rathod', role: 'Co-Founder', avatar: 'SR', image: 'https://placehold.co/128x128.png', dataAiHint: 'man portrait' },
   { name: 'Chithranjan S', role: 'Co-Founder', avatar: 'CS', image: 'https://placehold.co/128x128.png', dataAiHint: 'man portrait' },
   { name: 'Pramukh', role: 'Team Member', avatar: 'P', image: 'https://placehold.co/128x128.png', dataAiHint: 'person portrait' },
