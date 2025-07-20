@@ -1,7 +1,7 @@
 // @ts-nocheck
 'use client';
 
-import { School, Building } from 'lucide-react';
+import { School, Building, Bus } from 'lucide-react';
 
 export const HeroAnimation = () => {
   return (
@@ -23,6 +23,14 @@ export const HeroAnimation = () => {
             stroke-dashoffset: -1000;
           }
         }
+        @keyframes bus-move {
+            from {
+                offset-distance: 0%;
+            }
+            to {
+                offset-distance: 100%;
+            }
+        }
         .float {
           animation: float 6s ease-in-out infinite;
         }
@@ -35,6 +43,12 @@ export const HeroAnimation = () => {
         .flow {
           stroke-dasharray: 10;
           animation: flow 40s linear infinite;
+        }
+        #bus-path {
+            offset-path: path("M 100 150 Q 250 50 400 150");
+        }
+        .bus {
+            animation: bus-move 8s linear infinite;
         }
       `}</style>
       <svg
@@ -54,6 +68,7 @@ export const HeroAnimation = () => {
 
         {/* Lines connecting nodes */}
         <path
+          id="bus-path"
           d="M 100 150 Q 250 50 400 150"
           stroke="hsl(var(--primary) / 0.3)"
           strokeWidth="2"
@@ -99,6 +114,13 @@ export const HeroAnimation = () => {
            <foreignObject x="235" y="135" width="30" height="30">
              <span className="text-2xl font-bold text-secondary-foreground">T</span>
           </foreignObject>
+        </g>
+
+        {/* Bus Animation */}
+        <g className="bus">
+            <foreignObject x="-15" y="-15" width="30" height="30">
+                 <Bus className="w-full h-full text-primary" style={{ transform: 'scaleX(-1)' }}/>
+            </foreignObject>
         </g>
       </svg>
     </div>
