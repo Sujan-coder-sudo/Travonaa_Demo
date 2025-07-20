@@ -28,7 +28,7 @@ export const Logo: FC<LogoProps> = ({ className }) => {
             fontFamily="Inter, sans-serif"
             fontSize="24"
             fontWeight="bold"
-            fill="#1B2A4E"
+            fill="hsl(var(--foreground))"
             className="font-headline"
             letterSpacing="-0.5"
           >
@@ -36,8 +36,8 @@ export const Logo: FC<LogoProps> = ({ className }) => {
           </text>
           
           <g transform="translate(74, 4)">
-             <path d="M13 26C20.1797 26 26 20.1797 26 13C26 5.8203 20.1797 0 13 0C5.8203 0 0 5.8203 0 13C0 16.2248 1.15377 19.1672 3.09705 21.4173L13 26Z" fill="#1B2A4E"/>
-             <path d="M13 0 A 13 13 0 0 1 26 13 L 13 13 Z" fill="#3B496D" />
+             <path d="M13 26C20.1797 26 26 20.1797 26 13C26 5.8203 20.1797 0 13 0C5.8203 0 0 5.8203 0 13C0 16.2248 1.15377 19.1672 3.09705 21.4173L13 26Z" fill="hsl(var(--foreground))"/>
+             <path d="M13 0 A 13 13 0 0 1 26 13 L 13 13 Z" fill="#4A4A4A" />
              <circle cx="13" cy="13" r="1.5" fill="white"/>
              <path d="M13 13 L21 5" stroke="white" strokeWidth="2" strokeLinecap="round"/>
           </g>
