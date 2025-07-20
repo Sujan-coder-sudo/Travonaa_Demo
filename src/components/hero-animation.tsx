@@ -1,7 +1,7 @@
 // @ts-nocheck
 'use client';
 
-import { School, Building } from 'lucide-react';
+import { School, Building, Bus } from 'lucide-react';
 
 export const HeroAnimation = () => {
   return (
@@ -28,6 +28,9 @@ export const HeroAnimation = () => {
         }
         .float-delay-1 {
           animation-delay: -2s;
+        }
+        .float-delay-2 {
+          animation-delay: -4s;
         }
         .flow {
           stroke-dasharray: 10;
@@ -80,6 +83,14 @@ export const HeroAnimation = () => {
           <foreignObject x="75" y="125" width="50" height="50">
             <School className="w-full h-full text-primary-foreground" />
           </foreignObject>
+        </g>
+        
+        {/* Central Bus Node */}
+        <g className="float float-delay-2">
+            <circle cx="250" cy="150" r="35" fill="hsl(var(--secondary))" filter="url(#glow)" />
+            <foreignObject x="225" y="125" width="50" height="50">
+                <Bus className="w-full h-full text-secondary-foreground" />
+            </foreignObject>
         </g>
 
         {/* Industry Node */}
