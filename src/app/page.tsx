@@ -103,9 +103,9 @@ export default function Home() {
             <div className="relative mt-12">
                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-screen-xl h-2/3 bg-primary/5 rounded-t-full blur-3xl" />
                <Image
-                src="https://placehold.co/1200x600.png"
-                alt="Travonaa Platform Showcase"
-                data-ai-hint="dashboard professional"
+                src="https://storage.googleapis.com/aip-dev-images-us-central1/public/project_clxpd3wjd000a6g1cfl5j6t44/images/clxr4330u0004p81clt4c6328.jpeg"
+                alt="Students collaborating and studying together outdoors"
+                data-ai-hint="students college"
                 width={1200}
                 height={600}
                 className="relative mx-auto rounded-t-lg border shadow-2xl"
