@@ -103,9 +103,9 @@ export default function Home() {
             <div className="relative mt-12">
                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-screen-xl h-2/3 bg-primary/5 rounded-t-full blur-3xl" />
                <Image
-                src="https://images.unsplash.com/photo-1627556704290-2b1f58500c8a"
-                alt="A group of Indian students ready for the industry"
-                data-ai-hint="indian students"
+                src="https://placehold.co/1200x600.png"
+                alt="A group of students collaborating in a modern setting"
+                data-ai-hint="indian students industry"
                 width={1200}
                 height={600}
                 className="relative mx-auto rounded-t-lg border object-cover shadow-2xl"
