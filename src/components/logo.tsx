@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { FC } from 'react';
 import { cn } from '@/lib/utils';
-import { Briefcase } from 'lucide-react';
+import { Bus } from 'lucide-react';
 
 interface LogoProps {
   className?: string;
@@ -17,7 +17,7 @@ export const Logo: FC<LogoProps> = ({ className }) => {
       )}
     >
       <div className="rounded-md bg-primary p-2 text-primary-foreground">
-        <Briefcase className="h-5 w-5" />
+        <Bus className="h-5 w-5" />
       </div>
       <span className="text-xl font-bold tracking-tight">Travonaa</span>
     </Link>
