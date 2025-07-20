@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu } from 'lucide-react';
+import { Menu, ArrowRight } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cn } from '@/lib/utils';
 
@@ -28,8 +28,8 @@ const NavLink: FC<{ href: string; label: string; className?: string }> = ({
     <Link
       href={href}
       className={cn(
-        'transition-colors hover:text-primary',
-        isActive ? 'text-primary font-semibold' : 'text-muted-foreground',
+        'text-sm font-medium transition-colors hover:text-primary',
+        isActive ? 'text-primary' : 'text-muted-foreground',
         className
       )}
     >
@@ -53,7 +53,7 @@ export const PublicHeader: FC = () => {
             <Link href="/colleges">Login</Link>
           </Button>
           <Button asChild>
-            <Link href="/colleges">Register</Link>
+            <Link href="/colleges">Get Started <ArrowRight className="h-4 w-4" /></Link>
           </Button>
         </div>
         <Sheet>
@@ -80,7 +80,7 @@ export const PublicHeader: FC = () => {
                   <Link href="/colleges">Login</Link>
                 </Button>
                 <Button asChild>
-                  <Link href="/colleges">Register</Link>
+                  <Link href="/colleges">Get Started</Link>
                 </Button>
               </div>
             </div>

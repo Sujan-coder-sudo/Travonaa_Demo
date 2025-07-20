@@ -1,74 +1,62 @@
 import { PublicHeader } from '@/components/public-header';
 import { PublicFooter } from '@/components/public-footer';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
+  ArrowRight,
   Building,
   CheckCircle,
-  Link as LinkIcon,
-  MousePointerClick,
+  Network,
   School,
+  Sparkles,
+  Users
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const features = {
-  colleges: [
-    'Access to a wide network of industries.',
-    'Streamlined process for booking visits.',
-    'Direct communication with company representatives.',
-    'Gain practical insights for students.',
-  ],
-  industries: [
-    'Connect with upcoming talent.',
-    'Showcase your company culture and innovations.',
-    'Simplified management of visit requests.',
-    'Build strong academic partnerships.',
-  ],
-};
-
-const steps = [
+const features = [
   {
-    icon: MousePointerClick,
-    title: 'Step 1: Register',
-    description:
-      'Colleges and Industries sign up and create their profiles. Verification ensures authenticity.',
+    icon: Network,
+    title: 'Vast Network',
+    description: 'Access a curated list of top companies and educational institutions ready to collaborate.',
+    user: 'college'
+  },
+  {
+    icon: Sparkles,
+    title: 'AI-Powered Matching',
+    description: 'Our intelligent algorithms suggest the most relevant partners based on your profile and goals.',
+    user: 'industry'
   },
   {
     icon: CheckCircle,
-    title: 'Step 2: Verify',
-    description:
-      'Our team verifies profiles to maintain a trusted network of institutions and companies.',
-  },
-  {
-    icon: LinkIcon,
-    title: 'Step 3: Connect',
-    description:
-      'Browse profiles, send visit requests, and schedule meetings seamlessly through the platform.',
+    title: 'Seamless Scheduling',
+    description: 'Effortlessly manage industrial visit requests, approvals, and scheduling all in one place.',
+    user: 'all'
   },
 ];
 
 const testimonials = [
   {
-    name: 'Dr. Anya Sharma',
-    title: 'Placement Head, ABC Engineering College',
-    avatar: 'AS',
+    name: 'Priya Mehta',
+    title: 'Placement Officer, IIT Bombay',
+    avatar: 'PM',
     image: 'https://placehold.co/100x100.png',
     dataAiHint: 'woman portrait',
     quote:
-      "Travonaa has revolutionized how we connect with industries. Our students have gained invaluable exposure that wasn't possible before.",
+      "Travonaa has transformed our industry outreach. The platform is intuitive, and the quality of connections is unparalleled. It's a must-have for any ambitious university.",
   },
   {
-    name: 'Rohan Verma',
-    title: 'HR Manager, Innovate Corp',
-    avatar: 'RV',
+    name: 'Arjun Singh',
+    title: 'University Relations Lead, Tata Motors',
+    avatar: 'AS',
     image: 'https://placehold.co/100x100.png',
     dataAiHint: 'man portrait',
     quote:
-      'An excellent platform for industry-academia collaboration. We’ve found some of our best interns through visits organized on Travonaa.',
+      'We’ve discovered incredible talent through Travonaa. It simplifies campus engagement and helps us build meaningful, long-term relationships with academia.',
   },
 ];
+
 
 export default function Home() {
   return (
@@ -76,112 +64,63 @@ export default function Home() {
       <PublicHeader />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-white pt-24 text-center">
+        <section className="py-20 md:py-32">
           <div className="container mx-auto px-4">
-            <div
-              className="absolute inset-0 bg-grid-slate-200/[0.04] bg-[10px_10px]"
-              style={{
-                maskImage: 'linear-gradient(to bottom, white 0%, white 80%, transparent 100%)',
-              }}
-            />
-            <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground md:text-6xl">
-              Book Industry Visits & Corporate Meetings Easily
-            </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-              Travonaa bridges the gap between academia and industry, creating
-              opportunities for students and companies to connect, learn, and grow
-              together.
-            </p>
-            <div className="mt-8 flex justify-center gap-4">
-              <Button asChild size="lg">
-                <Link href="/colleges">For Colleges</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/industries">For Industries</Link>
-              </Button>
-            </div>
-            <div className="relative mt-12">
-               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-screen-xl h-2/3 bg-primary/5 rounded-t-full blur-3xl" />
-               <Image
-                src="https://storage.googleapis.com/static.aiforge.studio/estelle/students-bus.png"
-                alt="Indian college students on a bus for an industrial visit"
-                width={1200}
-                height={600}
-                className="relative mx-auto rounded-t-lg border object-cover shadow-2xl"
-                data-ai-hint="students bus"
-                priority
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Why Travonaa Section */}
-        <section className="py-20 sm:py-32">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:gap-20">
-              <div className="rounded-xl bg-card p-8 shadow-sm">
-                <div className="flex items-center gap-4">
-                  <div className="rounded-full bg-accent/20 p-3">
-                    <School className="h-8 w-8 text-accent" />
-                  </div>
-                  <h2 className="font-headline text-3xl font-bold text-foreground">
-                    Why Travonaa for Colleges?
-                  </h2>
+            <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+              <div className="text-center md:text-left">
+                <h1 className="font-headline text-4xl font-bold tracking-tighter text-foreground sm:text-5xl md:text-6xl">
+                  Where Academia Meets Industry
+                </h1>
+                <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
+                  Travonaa is the definitive platform for fostering powerful collaborations between educational institutions and leading companies.
+                </p>
+                <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
+                  <Button asChild size="lg">
+                    <Link href="/colleges">For Colleges <ArrowRight /></Link>
+                  </Button>
+                  <Button asChild size="lg" variant="secondary">
+                    <Link href="/industries">For Industries <ArrowRight /></Link>
+                  </Button>
                 </div>
-                <ul className="mt-6 space-y-3">
-                  {features.colleges.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                      <span className="text-muted-foreground">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
-              <div className="rounded-xl bg-card p-8 shadow-sm">
-                <div className="flex items-center gap-4">
-                  <div className="rounded-full bg-accent/20 p-3">
-                    <Building className="h-8 w-8 text-accent" />
-                  </div>
-                  <h2 className="font-headline text-3xl font-bold text-foreground">
-                    Why Travonaa for Industries?
-                  </h2>
-                </div>
-                <ul className="mt-6 space-y-3">
-                  {features.industries.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                      <span className="text-muted-foreground">{feature}</span>
-                    </li>
-))}
-                </ul>
+              <div className="relative">
+                <div className="absolute -inset-4 rounded-full bg-primary/10 opacity-50 blur-3xl"></div>
+                <Image
+                  src="https://storage.googleapis.com/static.aiforge.studio/estelle/students-group-2.png"
+                  alt="A diverse group of Indian college students collaborating on a project"
+                  width={1200}
+                  height={800}
+                  className="relative mx-auto rounded-xl object-cover shadow-2xl"
+                  data-ai-hint="students collaboration"
+                  priority
+                />
               </div>
             </div>
           </div>
         </section>
 
-        {/* How It Works Section */}
-        <section className="bg-white py-20 sm:py-32">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              A Simple Path to Collaboration
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-              Getting started with Travonaa is straightforward. Follow these three
-              simple steps to join our network.
-            </p>
-            <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-              {steps.map((step) => (
-                <Card key={step.title} className="text-left">
+        {/* Features Section */}
+        <section className="bg-muted/50 py-20 sm:py-32">
+          <div className="container mx-auto px-4">
+             <div className="text-center">
+              <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                The Ultimate Bridge for Collaboration
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+                We provide the tools and connections to build a brighter future for students and companies alike.
+              </p>
+            </div>
+            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+              {features.map((feature) => (
+                 <Card key={feature.title} className="text-center">
                   <CardHeader>
-                    <div className="flex items-center gap-4">
-                      <div className="rounded-lg bg-primary/10 p-3">
-                        <step.icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <CardTitle className="font-headline">{step.title}</CardTitle>
+                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+                       <feature.icon className="h-8 w-8 text-primary" />
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">{step.description}</p>
+                    <CardTitle className="font-headline text-xl">{feature.title}</CardTitle>
+                    <p className="mt-2 text-muted-foreground">{feature.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -189,23 +128,55 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Testimonials Section */}
+        {/* Dual CTA Section */}
         <section className="py-20 sm:py-32">
           <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+              <Card className="flex flex-col items-center justify-between p-8 text-center md:p-12">
+                <div className="mb-6">
+                  <School className="mx-auto h-12 w-12 text-primary" />
+                  <h3 className="mt-4 font-headline text-2xl font-bold">Are you a College?</h3>
+                  <p className="mt-2 text-muted-foreground">Unlock unparalleled opportunities for your students and faculty. Connect with industry leaders for industrial visits, internships, and research collaborations.</p>
+                </div>
+                 <Button asChild size="lg">
+                    <Link href="/colleges">Get Started <ArrowRight /></Link>
+                  </Button>
+              </Card>
+               <Card className="flex flex-col items-center justify-between p-8 text-center md:p-12">
+                <div className="mb-6">
+                  <Building className="mx-auto h-12 w-12 text-primary" />
+                  <h3 className="mt-4 font-headline text-2xl font-bold">Are you an Industry?</h3>
+                  <p className="mt-2 text-muted-foreground">Discover the next generation of talent. Showcase your innovations and build a strong pipeline of future employees and collaborators.</p>
+                </div>
+                <Button asChild size="lg">
+                    <Link href="/industries">Join Now <ArrowRight /></Link>
+                </Button>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+
+        {/* Testimonials Section */}
+        <section className="bg-muted/50 py-20 sm:py-32">
+          <div className="container mx-auto px-4">
             <h2 className="text-center font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Loved by Leaders in Academia & Industry
+              Trusted by the Best
             </h2>
-            <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+             <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-muted-foreground">
+              Hear what leaders in academia and industry have to say about their experience with Travonaa.
+            </p>
+            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
               {testimonials.map((testimonial) => (
                 <Card key={testimonial.name} className="flex flex-col">
-                  <CardContent className="flex-1 p-6">
+                  <CardContent className="flex-1 p-6 text-lg">
                     <p className="text-muted-foreground">
                       "{testimonial.quote}"
                     </p>
                   </CardContent>
-                  <div className="border-t bg-muted/50 p-6">
+                  <div className="border-t bg-card p-6">
                     <div className="flex items-center gap-4">
-                      <Avatar>
+                      <Avatar className="h-12 w-12">
                         <AvatarImage
                           src={testimonial.image}
                           alt={testimonial.name}
