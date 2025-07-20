@@ -45,10 +45,10 @@ export const HeroAnimation = () => {
           animation: flow 40s linear infinite;
         }
         #bus-path {
-            offset-path: path("M 100 150 Q 250 50 400 150");
+            offset-path: path('M 150 150 A 50 50 0 1 1 50 150 A 50 50 0 1 1 150 150 C 200 150 300 150 350 150 A 50 50 0 1 1 450 150 A 50 50 0 1 1 350 150 C 300 150 200 150 150 150 Z');
         }
         .bus {
-            animation: bus-move 8s linear infinite;
+            animation: bus-move 12s linear infinite;
         }
       `}</style>
       <svg
@@ -66,9 +66,16 @@ export const HeroAnimation = () => {
           </filter>
         </defs>
 
-        {/* Lines connecting nodes */}
+        {/* Path for bus - now invisible */}
         <path
           id="bus-path"
+          d="M 150 150 A 50 50 0 1 1 50 150 A 50 50 0 1 1 150 150 C 200 150 300 150 350 150 A 50 50 0 1 1 450 150 A 50 50 0 1 1 350 150 C 300 150 200 150 150 150 Z"
+          fill="none"
+          stroke="transparent"
+        />
+
+        {/* Lines connecting nodes */}
+        <path
           d="M 100 150 Q 250 50 400 150"
           stroke="hsl(var(--primary) / 0.3)"
           strokeWidth="2"
