@@ -103,7 +103,7 @@ export default function Home() {
             <div className="relative mt-12">
                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-screen-xl h-2/3 bg-primary/5 rounded-t-full blur-3xl" />
                <Image
-                src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&h=600&fit=crop"
+                src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&h=600&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Indian students traveling in a bus for an industrial visit"
                 width={1200}
                 height={600}
