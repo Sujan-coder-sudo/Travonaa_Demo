@@ -103,12 +103,13 @@ export default function Home() {
             <div className="relative mt-12">
                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-screen-xl h-2/3 bg-primary/5 rounded-t-full blur-3xl" />
                <Image
-                src="https://placehold.co/1200x600.png"
-                alt="Students ready for industry"
+                src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&h=600&fit=crop"
+                alt="Indian students traveling in a bus for an industrial visit"
                 width={1200}
                 height={600}
                 className="relative mx-auto rounded-t-lg border object-cover shadow-2xl"
-                data-ai-hint="indian students industry"
+                data-ai-hint="students bus"
+                priority
               />
             </div>
           </div>
