@@ -103,8 +103,8 @@ export default function Home() {
             <div className="relative mt-12">
                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-screen-xl h-2/3 bg-primary/5 rounded-t-full blur-3xl" />
                <Image
-                src="https://placehold.co/1200x600.png"
-                alt="Students on an industrial visit"
+                src="https://storage.googleapis.com/static.aiforge.studio/estelle/students-bus.png"
+                alt="Indian college students on a bus for an industrial visit"
                 width={1200}
                 height={600}
                 className="relative mx-auto rounded-t-lg border object-cover shadow-2xl"
