@@ -1,7 +1,7 @@
 // @ts-nocheck
 'use client';
 
-import { School, Building, Bus } from 'lucide-react';
+import { School, Building } from 'lucide-react';
 
 export const HeroAnimation = () => {
   return (
@@ -23,32 +23,15 @@ export const HeroAnimation = () => {
             stroke-dashoffset: -1000;
           }
         }
-        @keyframes bus-move {
-            from {
-                offset-distance: 0%;
-            }
-            to {
-                offset-distance: 100%;
-            }
-        }
         .float {
           animation: float 6s ease-in-out infinite;
         }
         .float-delay-1 {
           animation-delay: -2s;
         }
-        .float-delay-2 {
-          animation-delay: -4s;
-        }
         .flow {
           stroke-dasharray: 10;
           animation: flow 40s linear infinite;
-        }
-        #bus-path {
-            offset-path: path('M 150 150 A 50 50 0 1 1 50 150 A 50 50 0 1 1 150 150 C 200 150 300 150 350 150 A 50 50 0 1 1 450 150 A 50 50 0 1 1 350 150 C 300 150 200 150 150 150 Z');
-        }
-        .bus {
-            animation: bus-move 12s linear infinite;
         }
       `}</style>
       <svg
@@ -65,14 +48,6 @@ export const HeroAnimation = () => {
             </feMerge>
           </filter>
         </defs>
-
-        {/* Path for bus - now invisible */}
-        <path
-          id="bus-path"
-          d="M 150 150 A 50 50 0 1 1 50 150 A 50 50 0 1 1 150 150 C 200 150 300 150 350 150 A 50 50 0 1 1 450 150 A 50 50 0 1 1 350 150 C 300 150 200 150 150 150 Z"
-          fill="none"
-          stroke="transparent"
-        />
 
         {/* Lines connecting nodes */}
         <path
@@ -115,20 +90,6 @@ export const HeroAnimation = () => {
           </foreignObject>
         </g>
         
-        {/* Center Node */}
-        <g className="float float-delay-2">
-          <circle cx="250" cy="150" r="25" fill="hsl(var(--secondary))" />
-           <foreignObject x="235" y="135" width="30" height="30">
-             <span className="text-2xl font-bold text-secondary-foreground">T</span>
-          </foreignObject>
-        </g>
-
-        {/* Bus Animation */}
-        <g className="bus">
-            <foreignObject x="-15" y="-15" width="30" height="30">
-                 <Bus className="w-full h-full text-primary" style={{ transform: 'scaleX(-1)' }}/>
-            </foreignObject>
-        </g>
       </svg>
     </div>
   );
