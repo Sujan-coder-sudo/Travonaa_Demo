@@ -26,6 +26,7 @@ import {
   Building,
   School,
   LifeBuoy,
+  Menu,
 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import {
