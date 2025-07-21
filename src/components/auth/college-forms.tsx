@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { useRouter } from 'next/navigation';
 
 const collegeLoginSchema = z.object({
   email: z.string().email('Please enter a valid email address.'),
@@ -28,6 +29,7 @@ const collegeRegisterSchema = z.object({
 });
 
 export function CollegeLoginForm() {
+  const router = useRouter();
   const form = useForm<z.infer<typeof collegeLoginSchema>>({
     resolver: zodResolver(collegeLoginSchema),
     defaultValues: { email: '', password: '' },
@@ -36,6 +38,7 @@ export function CollegeLoginForm() {
   function onSubmit(values: z.infer<typeof collegeLoginSchema>) {
     console.log(values);
     // Handle login logic
+    router.push('/colleges/dashboard');
   }
 
   return (
@@ -74,6 +77,7 @@ export function CollegeLoginForm() {
 }
 
 export function CollegeRegisterForm() {
+  const router = useRouter();
   const form = useForm<z.infer<typeof collegeRegisterSchema>>({
     resolver: zodResolver(collegeRegisterSchema),
     defaultValues: { name: '', collegeName: '', collegeId: '', email: '', institutionEmail: '', phone: '', password: '' },
@@ -82,6 +86,7 @@ export function CollegeRegisterForm() {
   function onSubmit(values: z.infer<typeof collegeRegisterSchema>) {
     console.log(values);
     // Handle registration logic
+    router.push('/colleges/dashboard');
   }
 
   return (

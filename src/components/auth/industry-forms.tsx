@@ -8,6 +8,7 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
+import { useRouter } from 'next/navigation';
 
 const industryLoginSchema = z.object({
   email: z.string().email('Please enter a valid email address.'),
@@ -26,6 +27,7 @@ const industryRegisterSchema = z.object({
 });
 
 export function IndustryLoginForm() {
+  const router = useRouter();
   const form = useForm<z.infer<typeof industryLoginSchema>>({
     resolver: zodResolver(industryLoginSchema),
     defaultValues: { email: '', password: '' },
@@ -34,6 +36,7 @@ export function IndustryLoginForm() {
   function onSubmit(values: z.infer<typeof industryLoginSchema>) {
     console.log(values);
     // Handle login logic
+    router.push('/industries/dashboard');
   }
 
   return (
@@ -72,6 +75,7 @@ export function IndustryLoginForm() {
 }
 
 export function IndustryRegisterForm() {
+  const router = useRouter();
   const form = useForm<z.infer<typeof industryRegisterSchema>>({
     resolver: zodResolver(industryRegisterSchema),
     defaultValues: { name: '', companyName: '', email: '', password: '', description: '' },
@@ -80,6 +84,7 @@ export function IndustryRegisterForm() {
   function onSubmit(values: z.infer<typeof industryRegisterSchema>) {
     console.log(values);
     // Handle registration logic
+    router.push('/industries/dashboard');
   }
 
   return (
