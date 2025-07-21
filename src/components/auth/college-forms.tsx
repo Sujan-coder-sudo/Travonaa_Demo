@@ -19,8 +19,8 @@ const collegeRegisterSchema = z.object({
   collegeId: z.string().min(1, 'College ID is required.'),
   email: z.string().email('Please enter a valid email.'),
   institutionEmail: z.string().email({ message: "A valid institutional email is required for verification." }).refine(
-    (email) => email.endsWith('.edu') || email.endsWith('.ac.in'),
-    "Please use your official institutional email (.edu, .ac.in)."
+    (email) => email.endsWith('.edu') || email.endsWith('.ac.in') || email.endsWith('.edu.in'),
+    "Please use your official institutional email (.edu, .ac.in, .edu.in)."
   ),
   phone: z.string().min(10, 'Please enter a valid phone number.'),
   role: z.string({ required_error: 'Please select a role.' }),
@@ -92,7 +92,7 @@ export function CollegeRegisterForm() {
             <FormField control={form.control} name="collegeName" render={({ field }) => (<FormItem><FormLabel>College Name</FormLabel><FormControl><Input placeholder="Example University" {...field} /></FormControl><FormMessage /></FormItem>)} />
         </div>
         <FormField control={form.control} name="collegeId" render={({ field }) => (<FormItem><FormLabel>College ID</FormLabel><FormControl><Input placeholder="Your College ID" {...field} /></FormControl><FormMessage /></FormItem>)} />
-        <FormField control={form.control} name="institutionEmail" render={({ field }) => (<FormItem><FormLabel>Institution Email</FormLabel><FormControl><Input placeholder="id@yourcollege.edu" {...field} /></FormControl><FormMessage /></FormItem>)} />
+        <FormField control={form.control} name="institutionEmail" render={({ field }) => (<FormItem><FormLabel>Institution Email</FormLabel><FormControl><Input placeholder="id@yourcollege.edu.in" {...field} /></FormControl><FormMessage /></FormItem>)} />
         <FormField control={form.control} name="phone" render={({ field }) => (<FormItem><FormLabel>Phone Number</FormLabel><FormControl><Input placeholder="+1 234 567 890" {...field} /></FormControl><FormMessage /></FormItem>)} />
         <FormField
           control={form.control}
